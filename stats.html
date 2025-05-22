@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas Avanzadas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .filters { display: flex; gap: 1rem; margin-bottom: 2rem; }
+        .chart-container { width: 80%; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <div class="filters">
+        <select id="season-filter">
+            <option value="2024">Temporada 2024</option>
+            <option value="2023">Temporada 2023</option>
+        </select>
+        <button onclick="loadStats()">Cargar Datos</button>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="goalsChart"></canvas>
+    </div>
+
+    <script>
+        function loadStats() {
+            const season = document.getElementById('season-filter').value;
+            // Datos simulados (reemplazar con API real)
+            const data = season === '2024' ? 
+                { labels: ['Ene', 'Feb', 'Mar'], goals: [12, 8, 15] } :
+                { labels: ['2023-Q1', '2023-Q2'], goals: [20, 18] };
+
+            renderChart(data);
+        }
+
+        function renderChart(data) {
+            const ctx = document.getElementById('goalsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'Goles por Mes',
+                        data: data.goals,
+                        backgroundColor: '#3b82f6'
+                    }]
+                }
+            });
+        }
+
+        // Inicializar al cargar
+        window.onload = loadStats;
+    </script>
+</body>
+</html>

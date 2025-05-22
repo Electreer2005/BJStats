@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div class="blog-header">
+    <h1>Análisis Tácticos</h1>
+    <input type="text" id="search-input" placeholder="Buscar análisis...">
+    <button onclick="loginWithGoogle()" id="login-btn">Iniciar sesión con Google</button>
+</div>
+
+<div class="articles">
+    <article data-tags="fifa formación 4-3-3">
+        <h2>Análisis del 4-3-3 en FIFA 24</h2>
+        <p>Claves para dominar el mediocampo...</p>
+    </article>
+    <article data-tags="football-manager pressing">
+        <h2>Pressing alto en FM2024</h2>
+        <p>Cómo implementar un pressing efectivo...</p>
+    </article>
+</div>
+
+<div id="comments-container"></div>
+<textarea id="comment-text" placeholder="Escribe tu comentario..."></textarea>
+<button onclick="postComment()">Publicar</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="JS/firebase-comments.js"></script>
+<script>
+    document.getElementById('search-input').addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        document.querySelectorAll('.articles article').forEach(article => {
+            const tags = article.getAttribute('data-tags');
+            article.style.display = tags.includes(searchTerm) ? 'block' : 'none';
+        });
+    });
+</script>
+</body>
+</html>
