@@ -1,0 +1,259 @@
+/* Estilos Generales */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0a1128;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #1a1a2e;
+    border-bottom: 2px solid #0f3460;
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: #00c9a7;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00c9a7;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url('../IMG/fondo-cancha.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 6rem 1rem;
+}
+
+.hero-content h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #00c9a7;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #d1d1d1;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 1rem;
+    background: #16213e;
+}
+
+.stat-card {
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 140px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.stat-card h3 {
+    color: #00c9a7;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.tactica {
+    padding: 3rem 1rem;
+    text-align: center;
+    background: #0f3460;
+}
+
+.tactica h2 {
+    font-size: 1.8rem;
+    color: #00c9a7;
+    margin-bottom: 2rem;
+}
+
+.field {
+    display: grid;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    background: #2a9d8f;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    border: 4px solid #264653;
+    border-radius: 12px;
+    position: relative;
+}
+
+.player {
+    width: 40px;
+    height: 40px;
+    background: #e63946;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 0.8rem;
+}
+
+footer {
+    background: #1a1a2e;
+    text-align: center;
+    padding: 1rem;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        width: 80%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Estilos Generales ya definidos arriba */
+
+.blog-header {
+    padding: 3rem 1rem 1rem;
+    text-align: center;
+    background: #1a1a2e;
+}
+
+.blog-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: #00c9a7;
+    margin-bottom: 1rem;
+}
+
+#search-input {
+    width: 80%;
+    max-width: 400px;
+    padding: 0.7rem 1rem;
+    margin: 0.5rem auto 1rem;
+    display: block;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background: #2e3a59;
+    color: #fff;
+}
+
+#login-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #00c9a7;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #0a1128;
+    margin-top: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+#login-btn:hover {
+    background-color: #00b295;
+}
+
+.articles {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.articles article {
+    background: #1e293b;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #00c9a7;
+    border-radius: 8px;
+}
+
+.articles article h2 {
+    margin-top: 0;
+    color: #00c9a7;
+}
+
+.articles article p {
+    color: #d1d1d1;
+}
+
+.comments-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #16213e;
+    border-radius: 10px;
+}
+
+.comments-section h2 {
+    margin-bottom: 1rem;
+    color: #00c9a7;
+}
+
+#comment-text {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    background: #1e293b;
+    border: none;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    resize: vertical;
+}
+
+button[onclick="postComment()"] {
+    background-color: #00c9a7;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0a1128;
+    transition: background 0.3s ease;
+}
+
+button[onclick="postComment()"]:hover {
+    background-color: #00b295;
+}
